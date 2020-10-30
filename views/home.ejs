@@ -1,0 +1,56 @@
+<!-- <%- include('partials/header') %>
+
+
+<div class="jumbotron centered">
+  <div class="container">
+    <i class="fas fa-key fa-6x"></i>
+    <h1 class="display-3">Secrets</h1>
+    <p class="lead">Don't keep your secrets, share them anonymously!</p>
+    <hr>
+    <a class="btn btn-light btn-lg" href="/register" role="button">Register</a>
+    <a class="btn btn-dark btn-lg" href="/login" role="button">Login</a>
+
+  </div>
+</div>
+
+<%- include('partials/footer') %> -->
+<%- include('partials/homeheader') %>
+
+
+
+<div class="signup-form">
+  <form action="/" method="POST">
+    <h2>Register</h2>
+    <p class="hint-text">Create your account. It's free and only takes a minute!.</p>
+    <div class="form-group">
+      <div class="row">
+        <div class="col"><input type="text" class="form-control" name="name" placeholder="Your Name"
+            required="required"></div>
+        <div class="col"><input type="text" class="form-control" name="room_no" placeholder="Room no Ex- 395"
+            required="required"></div>
+      </div>
+    </div>
+    <div class="form-group">
+      <input type="text" class="form-control" name="roll_no" placeholder="Roll No. ex - BTECH/1xxxx/19"
+        required="required">
+    </div>
+    <div class="form-group">
+      <input type="email" class="form-control" name="username" placeholder="Email" required="required">
+    </div>
+    <div class="form-group">
+      <input type="password" class="form-control" name="password" placeholder="Password" required="required">
+    </div>
+    <div class="form-group">
+      <input type="password" class="form-control" name="confirm_password" placeholder="Confirm Password"
+        required="required">
+    </div>
+
+    <div class="form-group">
+      <button type="submit" class="btn btn-success btn-lg btn-block">Register Now</button>
+    </div>
+  </form>
+  <div class="text-center">Already have an account? <a href="/login">Sign in</a></div>
+</div>
+
+
+<%- include('partials/footer') %>
