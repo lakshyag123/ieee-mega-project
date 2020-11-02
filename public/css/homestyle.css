@@ -1,8 +1,9 @@
-body {
-	color: #fff;
-	background: #63738a;
+ body {
+	color: yellow;
+	background: #F1F1F1;
 	font-family: 'Roboto', sans-serif;
-}
+} 
+
 .form-control {
 	height: 40px;
 	box-shadow: none;
@@ -17,12 +18,12 @@ body {
 .signup-form {
 	width: 450px;
 	margin: 0 auto;
-	padding: 30px 0;
+	padding: 0px 0;
   	font-size: 15px;
 }
 .signup-form h2 {
 	color: #636363;
-	margin: 0 0 15px;
+	margin: 0 0 7px;
 	position: relative;
 	text-align: center;
 }
@@ -43,16 +44,16 @@ body {
 }
 .signup-form .hint-text {
 	color: #999;
-	margin-bottom: 30px;
+	margin-bottom: 0px;
 	text-align: center;
 }
 .signup-form form {
 	color: #999;
 	border-radius: 3px;
-	margin-bottom: 15px;
+	margin-bottom: 0px;
 	background: #f2f3f7;
 	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-	padding: 30px;
+	padding: 20px;
 }
 .signup-form .form-group {
 	margin-bottom: 20px;
