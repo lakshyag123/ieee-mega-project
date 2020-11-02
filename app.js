@@ -9,7 +9,6 @@ const passport = require("passport");
 const passportLocalMongoose = require("passport-local-mongoose");
 
 const app = express();
-
 app.use(express.static("public"));
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({
@@ -17,7 +16,7 @@ app.use(bodyParser.urlencoded({
 }));
 
 app.use(session({
-  secret: "Our little secret.",
+  secret: process.env.SECRET,
   resave: false,
   saveUninitialized: false
 }));
@@ -33,6 +32,7 @@ const userSchema = new mongoose.Schema({
   room_no: String,
   roll_no: String,
   username: String,
+  verify: false,
   password: String
 });
 
@@ -46,7 +46,7 @@ passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
 app.get("/", function (req, res) {
-  res.render("home");
+  res.render("login");
 });
 
 app.get("/login", function (req, res) {
@@ -54,16 +54,14 @@ app.get("/login", function (req, res) {
 });
 
 app.get("/register", function (req, res) {
-  res.render("register");
+  res.render('register');
 });
-app.get("/unsuccessful", function (req, res) {
-  res.render('unsuccessful');
-});
-app.get("/:userLogged/secrets", function (req, res) {
+
+app.get("/secrets", function (req, res) {
   if (req.isAuthenticated()) {
     res.render("secrets");
   } else {
-    res.redirect("/login");
+    res.redirect("/");
   }
 });
 
@@ -72,7 +70,7 @@ app.get("/logout", function (req, res) {
   res.redirect("/");
 });
 
-app.post("/", function (req, res) {
+app.post("/register", function (req, res) {
 
   if (req.body.password !== req.body.confirm_password) {
     res.send('Password does not match try again');
@@ -85,7 +83,7 @@ app.post("/", function (req, res) {
         if (foundUser) {
           res.send('User already exists please login');
         } else {
-          User.register({ name: req.body.name, room_no: req.body.room_no, roll_no: req.body.roll_no, username: req.body.username }, req.body.password, function (err, user) {
+          User.register({ name: req.body.name, room_no: req.body.room_no, roll_no: req.body.roll_no, username: req.body.username, verify: false }, req.body.password, function (err, user) {
             if (err) {
               console.log(err);
               res.redirect("/");
@@ -102,32 +100,43 @@ app.post("/", function (req, res) {
 
 });
 
-app.post("/login", passport.authenticate('local', { failureRedirect: '/unsuccessful' }), function (req, res) {
+app.post("/", passport.authenticate('local', { failWithError: true }), function (req, res) {
 
   const user = new User({
     username: req.body.username,
     password: req.body.password
   });
-
   req.login(user, function (err) {
     if (err) {
       console.log(err);
     } else {
+      User.findOne({ username: req.body.username }, function (err, foundUser) {
+        if (err) {
+          console.log(err);
+        } else {
+          if (foundUser) {
+            if (foundUser.verify === false) {
+              res.send('Your account is not yet verified, please check after you are verified');
+              foundUser.verify = true;
+              foundUser.save();
+            } else {
+              passport.authenticate("local")(req, res, function () {
 
-      passport.authenticate("local")(req, res, function () {
-        User.findOne({ username: req.body.username }, function (err, foundUser) {
-          if (err) {
-            console.log(err);
-          } else {
-            const userRandom = foundUser.name + '187';
-            res.redirect("/" + userRandom + "/secrets");
+                if (err) {
+                  console.log(err);
+                } else {
+                  res.redirect("/secrets");
+                }
+              });
+            }
           }
-        })
-
+        }
       });
+
     }
   });
-
+}, function (err, req, res, next) {
+  return res.render('unsuccessful');
 });
 
 
