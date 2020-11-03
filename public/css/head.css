@@ -1,44 +1,19 @@
-#tabs-1{
-    border: 5px outset #666467;
-}
-#tabs-2{
-    border: 5px outset #666467;
-}
-#log{
-    padding-bottom: 1.6%; 
-    padding-top: 1.6%; 
-    padding-left: 27%; 
-    border: 6px outset #666467;
-    border-bottom: 2px outset #666467;
-}
-#t1{
-    padding-left: 23%;
-    padding-right: 42%;
-    font-family: 'Ubuntu', sans-serif;
-}
-#t2{
-    padding-left: 25%; 
-    padding-right: 30%; 
-    font-family: 'Ubuntu', sans-serif;
-}
-.tb{
-    width: 33%;
-}
-#tabs{
-    width: 500px;
-    height: 0px;
-    margin-left: 33%;
-    margin-top: 0%;
-    padding: 0px;
+#frm{
+    border: 2px solid #454646;
+    margin-top: 3%;
     animation-name: hel1;
     animation-duration: 2.5s;
    animation-fill-mode: forwards;
    position: relative;
 }
+
 #top{
     height: 100px;
     background: #131D47;
-    text-align: center;
+}
+#t{
+    font-family: 'Ubuntu', sans-serif;
+    color: white;
 }
 #logo1{
     width: 125px;
