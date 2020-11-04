@@ -1,0 +1,68 @@
+<!-- <%- include('partials/header') %>
+
+
+<div class="jumbotron centered">
+  <div class="container">
+    <i class="fas fa-key fa-6x"></i>
+    <h1 class="display-3">Secrets</h1>
+    <p class="lead">Don't keep your secrets, share them anonymously!</p>
+    <hr>
+    <a class="btn btn-light btn-lg" href="/register" role="button">Register</a>
+    <a class="btn btn-dark btn-lg" href="/login" role="button">Login</a>
+
+  </div>
+</div>
+
+<%- include('partials/footer') %> -->
+<%- include('partials/homeheader') %>
+
+
+
+<div class="signup-form">
+    <form action="/admin/<%= foundUser._id %>" method="POST">
+        <h2><%= foundUser.name %></h2>
+        <p class="hint-text">User credentials</p>
+        <div class="form-group">
+            <input type="text" class="form-control" name="name" value="<%= foundUser.name %>" required="required">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" name="hostel_no" value="<%= foundUser.hostel_no %>"
+                required="required">
+        </div>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-lg-6">
+                    <input type="text" class="form-control" name="room_no" value="<%= foundUser.room_no %>"
+                        required="required">
+                </div>
+                <div class="col-lg-6">
+                    <input type="text" class="form-control" name="roll_no" value="<%= foundUser.roll_no %>"
+                        required="required">
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" name="contact_no" value="<%= foundUser.contact_no %>"
+                required="required">
+        </div>
+        <div class="form-group">
+            <input type="email" class="form-control" name="username" value="<%= foundUser.username %>"
+                required="required">
+        </div>
+        <!-- <div class="form-group">
+            <input type="password" class="form-control" name="password" placeholder="Password" required="required">
+        </div>
+        <div class="form-group">
+            <input type="password" class="form-control" name="confirm_password" placeholder="Confirm Password"
+                required="required">
+        </div> -->
+
+        <div class="form-group">
+            <button type="submit" class="btn btn-success btn-lg btn-block">Verify Now</button>
+        </div>
+    </form>
+    <div class="text-center">Already have an account? <a href="/">Sign in</a></div>
+</div>
+
+
+<%- include('partials/footer') %>
