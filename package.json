@@ -22,5 +22,13 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sakpab2602/ieee-mega-project.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sakpab2602/ieee-mega-project/issues"
+  },
+  "homepage": "https://github.com/sakpab2602/ieee-mega-project#readme"
 }
