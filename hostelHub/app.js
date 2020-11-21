@@ -10,7 +10,7 @@ const session = require('express-session');
 const passport = require("passport");
 const passportLocalMongoose = require("passport-local-mongoose");
 const sgmail = require('@sendgrid/mail');
-const API_KEY = 'api key goes here';
+const API_KEY = 'api key goes here';  //i will give the api key
 const multer = require('multer');
 const e = require('express');
 const upload = multer({ dest: 'public/uploads/' })
@@ -30,7 +30,7 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-mongoose.connect('mongodb url goes here', { useNewUrlParser: true });
+mongoose.connect('mongodb url goes here', { useNewUrlParser: true });  // i will give the mongodb server url
 mongoose.set("useCreateIndex", true);
 
 var storage = multer.diskStorage({
