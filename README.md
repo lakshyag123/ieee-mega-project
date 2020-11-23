@@ -1,1 +1,1 @@
-# ieee-mega-project - HOSTEL HUB
+# IEEE MEGA PROJECT - HOSTEL HUB
