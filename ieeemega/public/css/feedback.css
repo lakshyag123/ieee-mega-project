@@ -1,0 +1,88 @@
+#sub{
+    background-color: #43c9c6;
+    color: white;
+    width: 200px;
+    height: 40px;
+}
+body{
+    background: url(/hostel/FeedBack.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+}
+#x2{
+    margin-top: 2.5%;
+}
+.field{
+    margin-top: 220px;
+}
+#cbox{
+    border: 2.5px solid #b0aea7;
+    width: 100%;
+    height: 250px;
+}
+#box{
+    font-size: 28px;
+    margin-top: 50px;
+}
+#fback{
+    color: #43c9c6;font-size: 70px;background-color: white;
+}
+@media screen and (max-width: 600px){
+    body{
+        background: none;
+        /* background: url(/hostel/FeedBackp.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 290px;
+         */
+    }
+    /* #ba{
+        margin-bottom: 100px;
+    } */
+    #xback{
+        background: url(/hostel/FeedBackp.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 290px;
+        margin-top: 30px;
+        padding-top: 20px;
+    }
+    #box{
+        font-size: 18px;
+        margin-top: 20px;
+    }
+    .field{
+        margin-top: 80px;
+    }
+    #x2{
+        margin-top: 0px;
+    }
+    #cbox{
+        border: 2.5px solid #b0aea7;
+        width: 100%;
+        height: 250px;
+    }
+    #sub{
+        width: 150px;
+        height: 40px;
+        font-size: 16px;
+        margin-top: 10px;
+        padding-bottom: 10px;
+        padding-top: 7px;
+    }
+   
+  
+}
+/* @media screen and (max-width: 800px){
+    #ba{
+        display: none;
+    }
+} */
+
+
+#tbox{
+    border: 2.5px solid #b0aea7;
+    width: 100%;
+    margin-bottom: 1%;
+}

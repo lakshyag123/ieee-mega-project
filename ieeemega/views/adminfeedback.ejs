@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Admin</title>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' />
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/adminstyle.css">
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&family=Teko&display=swap&family=Merriweather:ital,wght@1,700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/homestyle.css">
+    <link rel="stylesheet" href="/css/logsignin.css">
+    <link rel='stylesheet' type='text/css' href='/css/head.css'>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+    </script>
+</head>
+
+<body style="background-color: #6bd4cd;">
+
+    <div id="adhead" style="width: 100%;">
+        <a href="/admindashboard" id="ba" style="float: left;margin-top: 12px;">
+            <i class="fa fa-arrow-circle-left" aria-hidden="true"
+                style="font-size: 75px;color: #08ffdc;padding-top: 5px;padding-bottom: 5px;padding-right: 5px;padding-left: 5px;"></i></a>
+    </div>
+
+    <div style="padding-top: 3.9%;">
+        <div class="container-xl">
+            <div class="table-responsive">
+
+                <div class="table-wrapper">
+                    <div class="table-title">
+                        <div class="row">
+                            <div class="col-sm-5">
+                                <h2>Feedback <b>List</b></h2>
+                            </div>
+                        </div>
+                    </div>
+                    <table class="table table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th>Hostel No.</th>
+                                <th>Name</th>
+                                <th>Roll No.</th>
+                                <th>View feedbacks</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            <% for(let i=0;i<members.length;i++){ %>
+
+                            <tr>
+                                <td><%= members[i].hostel_no %></td>
+
+                                <td><%= members[i].user %></td>
+                                <td><%= members[i].roll_no %></td>
+                                <td><a href="/adminfeedback/<%= members[i]._id %>">View </a></td>
+                            </tr>
+
+                            <% } %>
+
+                        </tbody>
+                    </table>
+                    <div class="clearfix">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script type='text/javascript' src='./home.js'></script>
+
+</body>
+
+</html>

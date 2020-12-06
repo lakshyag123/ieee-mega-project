@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700">
+    <title>Student Details & Complaint</title>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' />
+    <link rel='stylesheet' href='https://www.w3schools.com/w3css/4/w3.css' />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/css/homestyle.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&family=Teko&display=swap&family=Merriweather:ital,wght@1,700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/css/homestyle.css">
+    <link rel="stylesheet" href="/css/logsignin.css">
+    <link rel='stylesheet' type='text/css' href='/css/head.css'>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="/css/studentdetail.css">
+</head>
+
+<body id="best1">
+
+    <!-- <nav class="navbar navbar-expand-lg sticky-top" id="top">
+
+    <div id="heading" style="width: 100%;"> <img src="/hostel/logo1.png" id="logo1">Hostel<img src="/hostel/logo2.png"
+            id="logo2"></div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+
+                    <button type="button" class="btn btn-outline-primary" id="topbut"style="margin-right: 3%";><a class="nav-link" href="/adminDashboard"><div
+                        id="t"><i class="fa fa-home" id="tt"></i>HOME</div></a></button>
+                    <button type="button" class="btn btn-outline-primary" id="topbut"><a class="nav-link" href="/logout"><div
+                        id="t"><i class="fas fa-sign-out-alt" id="tt"></i>LogOut</div></a></button>
+         
+            
+        </div>
+    </div>
+</nav> -->
+<a href="/adminmesscomplaint" id="ba" style="float: left;">
+    <i class="fa fa-arrow-circle-left" aria-hidden="true" style="background-color: #ffdc79; color: #515b7c;font-size: 75px;padding-top: 5px;padding-bottom: 5px;padding-right: 5px;padding-left: 5px;"></i></a>
+    <div style="padding-top: 4%;">
+        <div class="wrapper" id='frm' style="border-radius: 10%;background-color: #ffdc79;">
+
+            <form method="POST">
+                <!-- <div class="title">
+                Student Details
+            </div> -->
+
+                <div class=" form">
+
+                    <div class="inputfield">
+                        <label style="color: #515b7c;"><strong>Name</strong></label>
+                        <input type="text" class="input" name="name" required='required' value="<%= member.user %>"
+                            readonly>
+                    </div>
+                    <div class="inputfield">
+                        <label style="color: #515b7c;"><strong>Hostel No.</strong></label>
+
+                        <input type="text" class="input" name="hostel_no" required='required'
+                            value="<%= member.hostel_no %>" readonly>
+                    </div>
+                    <div class="inputfield">
+                        <label style="color: #515b7c;"><strong>Room No.</strong></label>
+
+                        <input type="text" class="input" name="room_no" required='required'
+                            value="<%= member.room_no %>" readonly>
+                    </div>
+                    <div class="inputfield">
+                        <label style="color: #515b7c;"><strong>Roll No.</strong></label>
+
+                        <input type="text" class="input" name="roll_no" required='required'
+                            value="<%= member.roll_no %>" readonly>
+                    </div>
+
+                    <div class="inputfield">
+                        <label style="color: #515b7c;"><strong>Contact Number</strong></label>
+
+                        <input type="tel" class="input" name='phone' required='required' value="<%= member.phone %>"
+                            readonly>
+                    </div>
+                    <div class="inputfield">
+                        <label style="color: #515b7c;"><strong>Complaint title</strong></label>
+
+                        <input type="text" class="input" name="title" required='required' value="<%= member.title %>"
+                            readonly>
+                    </div>
+                    <div class="inputfield">
+                        <label style="color: #515b7c;"><strong>Complaint</strong></label>
+
+                        <textarea style="height: 200px;" class="input" name="roll_no" required='required'
+                            readonly><%= member.body %></textarea>
+                    </div>
+                    <% if(member.verify==null){ %>
+                    <div class="inputfield">
+                        <input type="submit" value="Verify" class="btn"
+                            formaction="/adminmesscompdetails/<%= member._id %>">
+                    </div>
+                    <div class="inputfield" style="background-color: red!important;">
+                        <input type="submit" value="Reject" class="btn" formaction="/rejectedmess/<%= member._id %>">
+                    </div>
+                    <% } %>
+                    <% if(member.verify==false){ %>
+                    <div class="inputfield">
+                        <input type="submit" value="Verify" class="btn"
+                            formaction="/adminmesscompdetails/<%= member._id %>">
+                    </div>
+                    <% } %>
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+
+
+    <script type='text/javascript' src='/home.js'></script>
+    <%- include('partials/footer') %>

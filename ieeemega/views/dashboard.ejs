@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' />
+    <link rel='stylesheet' href='https://www.w3schools.com/w3css/4/w3.css' />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/css/homehostel.css">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&family=Noto+Sans+JP:wght@300;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&family=Teko&display=swap&family=Merriweather:ital,wght@1,700&display=swap" rel="stylesheet"> 
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+   
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg" id="top">
+
+        <div id="heading" style="width: 100%;"> <img src="hostel/logo3.png" id="logo3">Hostel<img src="hostel/logo4.png"
+            id="logo4"></div>
+      
+        
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+      
+            <button type="button" class="btn" id="x" style="margin-right: 3%;"><a class="nav-link" href="/logout"><span
+                  id="t"><i class="fas fa-sign-out-alt" aria-hidden="true" style="display: inline;"></i>LogOut</span></a></button>
+                 
+          </div>
+        </div>
+      </nav>
+      
+      <nav class="navbar navbar-expand-lg sticky-top" id="headtop">
+        <div id="pack">
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+        <button type="button" class="btn " id="ht"><a href="./hostel/messmenu.webp" class="nav-link" target="_blank"><span
+          id="t"><i class="fas fa-hamburger" aria-hidden="true" style="display: inline;"></i><strong> MESS MENU</strong></span></a></button>
+          <div class="dropdown" style="display: inline;">
+          <button type="button" class="btn dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="margin-top: 1%;"><span
+            id="t"><i class="fas fa-bell" aria-hidden="true" style="display: inline;"></i><strong> NOTICE BOARD</strong></span></button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="./hostel/notice.pdf" target="_blank"><i class="fas fa-dot-circle" aria-hidden="true" style="display: inline;"></i><strong> NOTICE 1</strong></a>
+              <a class="dropdown-item" href="./hostel/notice2.pdf" target="_blank"><i class="fas fa-dot-circle" aria-hidden="true" style="display: inline;"></i><strong> NOTICE 2</strong></a>
+              <a class="dropdown-item" href="./hostel/notice3.pdf" target="_blank"><i class="fas fa-dot-circle" aria-hidden="true" style="display: inline;"></i><strong> NOTICE 3</strong></a>
+            </div>
+          </div>
+        <button type="button" class="btn " id="ht"><a href="./hostel/BIT MESRA Dean  Associate Deans Wardens.pdf" class="nav-link" target="_blank"><span
+          id="t"><i class="fas fa-address-card" aria-hidden="true" style="display: inline;"></i><strong> HOSTEL WARDENS</strong></span></a></button>
+        <button type="button" class="btn " id="ht"><a href="mailto:bithostelhub@gmail.com" class="nav-link" ><span
+          id="t"><i class="fa fa-envelope" aria-hidden="true" style="display: inline;"></i><strong> CONTACT</strong></span></a></button>
+          </div>
+          </div>
+        </div>
+
+      </nav>
+      <div class="dropdown" style="background-color: #142034;padding-left: 20px;" id="hide">
+        <img src="hostel/logo3.png" id="logo3" style="margin-bottom: 4px;"><span style="color: #F1F1F1;
+        font-size: 44px;
+        font-family: 'Teko', sans-serif;"> Hostel</span><img src="hostel/logo4.png"
+          id="logo4">
+    
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color:#142034 ; display: inline;padding: 3px 3px;height: 38px;float: right;margin-top: 18px;margin-right: 3px;">
+        <i class="fa fa-bars" style="font-size: 30px;"></i>
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="./hostel/messmenu.webp" target="_blank"><i class="fas fa-hamburger" aria-hidden="true" style="display: inline;" ></i><strong> MESS MENU</strong></span></a>
+        <div style="display: inline;" id="hideme">
+          <a class="dropdown-item" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ><i class="fas fa-bell" aria-hidden="true" style="display: inline;"></i><strong> NOTICE BOARD</strong></span></a>
+        </div>
+
+        
+          
+          
+            <a class="dropdown-item" href="./hostel/notice.pdf" target="_blank" id="hidedrop2"><i class="fas fa-dot-circle" aria-hidden="true" style="display: inline;"></i><strong> NOTICE 1</strong></a>
+            <a class="dropdown-item" href="./hostel/notice2.pdf" target="_blank" id="hidedrop3"><i class="fas fa-dot-circle" aria-hidden="true" style="display: inline;"></i><strong> NOTICE 2</strong></a>
+            <a class="dropdown-item" href="./hostel/notice3.pdf" target="_blank" id="hidedrop4"><i class="fas fa-dot-circle" aria-hidden="true" style="display: inline;"></i><strong> NOTICE 3</strong></a>
+            <div class="dropdown-divider" id="hidedrop5"></div>
+          <a class="dropdown-item" href="./hostel/BIT MESRA Dean  Associate Deans Wardens.pdf" target="_blank"><i class="fas fa-address-card" aria-hidden="true" style="display: inline;"></i><strong> HOSTEL WARDENS</strong></a>
+          <a class="dropdown-item" href="mailto:bithostelhub@gmail.com"><i class="fa fa-envelope" aria-hidden="true" style="display: inline;"></i><strong> CONTACT</strong></span></a>
+          <a class="dropdown-item" href="/logout"><i class="fas fa-sign-out-alt" aria-hidden="true" style="display: inline;"></i><strong> LOGOUT</strong></span></a>
+        </div>
+      </div>
+        
+      <div id="adjust">
+              <div class="flex-container">
+                <div id="bo">
+              <a href="/poll" class="btn btn-squared-default btn-info" id="box">
+                <div  id="inside">   <i class="fas fa-poll "></i></div>
+             <br>
+               <h1 id="txt"> MESS POLL</h1>
+            </a>
+            </div>
+            <div  id="bo">
+              <a href="/messattend" class="btn btn-squared-default btn-info" id="box">
+                <div id="inside">   <i class="fas fa-calendar-alt "></i></div>
+             <br>
+               <h1 id="txt"> MESS ATTENDANCE</h1>
+            </a>
+            </div>
+            <div id="bo">
+              <a href="/complaintmess" class="btn btn-squared-default btn-info" id="box">
+                <div id="inside">   <i class="fa fa-hand-stop-o "></i></div>
+             <br>
+               <h1 id="txt"> MESS COMPLAINT</h1>
+            </a>
+            </div>
+
+            <div id="bo">
+              <a href="/laundry" class="btn btn-squared-default btn-info" id="box">
+                <div id="inside">   <i class="	fas fa-tshirt "></i></div>
+             <br>
+               <h1 id="txt"> LAUNDRY BOOK</h1>
+            </a>
+            </div>
+            <div  id="bo">
+              <a href="/hostelattend" class="btn btn-squared-default btn-info" id="box">
+                <div id="inside">   <i class="fa fa-calendar "></i></div>
+             <br>
+               <h1 id="txt"> HOSTEL ATTENDANCE</h1>
+            </a>
+            </div>
+            <div id="bo">
+              <a href="/complaint" class="btn btn-squared-default btn-info" id="box">
+                <div id="inside">   <i class="fa fa-hand-pointer-o"></i></div>
+             <br>
+               <h1 id="txt"> HOSTEL COMPLAINT</h1>
+            </a>
+            </div>
+  
+  </div>
+      </div>
+      
+  <div id="bottomb">
+    <a href="/abouthostel"><button type="button" class="but" style="border-radius: 60%;height: 60px;width: 90px;background-color: white;margin-right: 1%;color: #142034;border-color: #142034;border: 0px;text-decoration: underline;"><strong>ABOUT</strong></button></a> 
+  <a href="/feedback"> <button type="button" class="but" style="border-radius: 60%;height: 60px;width: 120px;background-color: white;color: #142034;border-color: #142034;border: 0px;text-decoration: underline;"><strong>FEEDBACK</strong></button></a> 
+  </div>
+ 
+    <script type='text/javascript' src='./homehostel.js'></script>
+</body>
+</html>

@@ -1,0 +1,171 @@
+body{
+    background: url(/hostel/hostelattend22.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* background-size: auto; */
+    background-color: #464c67;
+}
+#baat{
+    color: white;font-size: 75px;
+}
+#daa{
+    margin-top: 9%;
+    text-align: center;
+}
+#atbut{
+    margin-top: 20px;
+    margin-left: 2px;
+}
+#dd{
+    font-size: 30px;
+    color: white;
+    border: 2.5px solid #515b7c;
+    background-color:#515b7c ;
+    padding-left: 10px;
+}
+#dad{
+    margin-top: 1.3%;
+    text-align: center;
+}
+#me{
+    color: white;
+    background-color:#515b7c ;
+    margin-top: 30px;
+    font-size: 20px;
+    margin-left: 270px;
+    width: 200px;
+    
+}
+#todaysdate{
+    font-size: 30px;
+    border: 2.5px solid #515b7c;
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+#time{
+    font-size: 30px;
+    border: 2.5px solid #515b7c;
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+#click{
+    margin-top: 0%;
+    font-size: 50px;
+    width: 100px;
+}
+#tbox{
+    border: 2.5px solid #b0aea7;
+    width: 100%;
+}
+#cbox{
+    border: 2.5px solid #b0aea7;
+    width: 100%;
+    height: 250px;
+}
+.widget{
+    margin-top: 40px;
+}
+#box1{
+    margin-right: 20px;
+    margin-left: 50px;
+    font-size: 25px;
+}
+#box2{
+    font-size: 25px;
+}
+#bum{
+    
+    margin-top: 20px;
+    /* margin-top: 0px;
+    margin-right: 300px;
+    margin-left: 400px; */
+}
+@media screen and (max-width: 1300px){
+    body{
+        background: url(/hostel/hostelattend.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        /* background-size: auto; */
+        background-color: #464c67;
+    }
+    #baat{
+        color: #515b7c;font-size: 70px;
+    }
+    #atbut{
+        margin-top: 30px;
+    }
+}
+@media screen and (min-width: 600px){
+    #hos{
+        display: none;
+    }
+    #hoom{
+        display: none;
+    }
+}
+@media screen and (max-width: 600px){
+    #baat{
+        color: #515b7c;font-size: 50px;
+    }
+    #atbut{
+        margin-top: 20px;
+    
+    }
+    body{
+        background-color: white;
+        background: url(/hostel/hostelattend2.png);
+        background-repeat: no-repeat;
+        height: 70px;
+    }
+    #hos{
+        display: inline;
+        font-size: 32px;
+        margin-left: 5px;
+        font-weight: 700;
+        color: #515b7c;
+    }
+    #dd{
+        font-size: 23px;
+        color: white;
+        border: 2.5px solid #515b7c;
+        background-color:#515b7c ;
+        padding-left: 10px;
+    }
+    #todaysdate{
+        font-size: 23px;
+        border: 2.5px solid #515b7c;
+        width: 100%;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    #time{
+        font-size: 23px;
+        border: 2.5px solid #515b7c;
+        width: 100%;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .resh{
+        font-size: 23px;
+    }
+    #me{
+        color: white;
+        background-color:#515b7c ;
+        margin-top: 30px;
+        font-size: 20px;
+        margin-left: 0px;
+        margin-right: 100px;
+        width: 150px;
+        
+    }
+    #box1{
+        margin-right: 20px;
+        margin-left: 50px;
+        font-size: 20px;
+    }
+    #box2{
+        font-size: 20px;
+    }
+}

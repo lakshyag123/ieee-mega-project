@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <title>Poll</title>
+    <link rel='stylesheet' href='/css/foodpoll.css' />
+    <link rel='stylesheet' href='//netdna.bootstrapcdn.com/bootstrap/3.0.1/css/bootstrap.min.css' />
+</head>
+
+<body style="background-color: #f56c53;">
+    <div id="top">
+    </div>
+    <div class="container" style="text-align: center;">
+        <h3 style="color: green; font-weight: bold;">You have submitted your vote successfully! click on the link down
+            below to view the current trend in votes</h3>
+        <form action="/poll" method="GET">
+            <input type="submit" id="vote-btn" class="btn btn-primary btn-sm" value="See trends">
+        </form>
+
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+        <script src="https://js.pusher.com/4.1/pusher.min.js"></script>
+
+    </div>
+</body>
+
+</html>

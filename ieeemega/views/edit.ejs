@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Laundry history</title>
+    <meta name="description" content="This is the description">
+    <link rel="stylesheet" href="/css/styleslaun.css" />
+    <script src="/store.js" defer></script>
+</head>
+
+<body>
+
+    <% const monthNames = ["Jan", "Feb", "Mar", "April", "May", "June","July", "Aug", "Sept", "Oct", "Nov", "Dec"] %>
+
+    <section class="container content-section">
+        <h2 class="section-header">Edit history for <%= monthNames[cart.created.getMonth()] %>
+            <%= cart.created.getDate() %></h2>
+        <div class="cart-row">
+            <span class="cart-item cart-header cart-column">ITEM</span>
+            <span class="cart-quantity cart-header cart-column">QUANTITY</span>
+        </div>
+
+        <form action="/laundry/<%= cart._id %>?_method=PUT" method="POST" class="ui form container">
+            <div class="cart-row">
+                <div class="cart-item cart-column">
+                    <span class="cart-item-title">Jeans</span>
+                </div>
+                <div class="cart-quantity cart-column">
+                    <input class="cart-quantity-input" type="number" value="<%= cart.qty1==null?'0':cart.qty1 %>"
+                        name="cart[qty1]">
+                </div>
+            </div>
+            <div class="cart-row">
+                <div class="cart-item cart-column">
+                    <span class="cart-item-title">Shirt/T-Shirt</span>
+                </div>
+                <div class="cart-quantity cart-column">
+                    <input class="cart-quantity-input" type="number" value="<%= cart.qty2==null?'0':cart.qty2 %>"
+                        name="cart[qty2]">
+                </div>
+            </div>
+            <div class="cart-row">
+                <div class="cart-item cart-column">
+                    <span class="cart-item-title">Jacket</span>
+                </div>
+                <div class="cart-quantity cart-column">
+                    <input class="cart-quantity-input" type="number" value="<%= cart.qty3==null?'0':cart.qty3 %>"
+                        name="cart[qty3]">
+                </div>
+            </div>
+            <% let amount = (cart.qty1==null?Number(0):Number((cart.qty1)*20)) + (cart.qty2==null?Number(0):Number((cart.qty2)*10)) + (cart.qty3==null?Number(0):Number((cart.qty3)*30)) %>
+            <div class="cart-total">
+                <strong class="cart-total-title">Total</strong>
+                <input class="cart-total-price" type="text" value="<%= amount %>" name="cart[amount]">
+            </div>
+            <button class="btn btn-save">SAVE</button>
+        </form>
+    </section>
+</body>
+
+</html>

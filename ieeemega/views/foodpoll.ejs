@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <title>Poll</title>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' />
+    <link rel='stylesheet' href='https://www.w3schools.com/w3css/4/w3.css' />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/css/homestyle.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&family=Teko&display=swap&family=Merriweather:ital,wght@1,700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/css/homestyle.css">
+    <link rel="stylesheet" href="/css/logsignin.css">
+    <link rel='stylesheet' type='text/css' href='/css/head.css'>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="/css/animate.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Sansita+Swashed&display=swap"
+        rel="stylesheet">
+    <link rel='stylesheet' href='/css/foodpoll.css' />
+    <link rel='stylesheet' href='//netdna.bootstrapcdn.com/bootstrap/3.0.1/css/bootstrap.min.css' />
+</head>
+
+<body style="background-color: #f56c53;">
+    <div id="top">
+        <a href="/dashboard">
+            <i class="fa fa-arrow-circle-left" aria-hidden="true" id="backpoll"></i></a>
+    </div>
+    <div class="container">
+        <% if(check==''){ %>
+        <h2 style="color: #313c59; font-weight: bold;text-align: center;">Thank you for your valuable vote!! Check the
+            trends to get a
+            closer look at the shape of the final mess menu</h2>
+        <% }else{ %>
+        <h2 style="color:#313c59 ; font-weight: bold;text-align: center;">Welcome to mess polls!! Vote for your
+            favourite dishes which you
+            want to have in your mess menu! </h2>
+        <% } %>
+        <div class="row">
+            <form action="/poll" method="POST">
+                <% for(let i=0;i<polls.length; i++){ %>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+
+                    <div class="panel panel-primary">
+                        <h4 style="text-align: center;"><%= polls[i].topic %></h4>
+                        <div class="panel-heading" style="background-color: #313c59;">
+                            <h3 class="panel-title">
+                                <span class="glyphicon glyphicon-arrow-right"></span><%= polls[i].type %>
+                            </h3>
+                        </div>
+                        <div class="panel-body">
+                            <ul class="list-group">
+                                <% let lead = polls[i].choices[0].votes %>
+                                <% for(let j=0; j<polls[i].choices.length; j++){ %>
+                                <% if(polls[i].choices[j].votes>lead){ %>
+                                <% lead = polls[i].choices[j].votes %>
+                                <% } %>
+                                <% } %>
+                                <% for(let j=0;j<polls[i].choices.length; j++){ %>
+                                <li class="list-group-item">
+                                    <div class="radio">
+                                        <label>
+                                            <% if(check!=''){ %>
+                                            <input type="radio" name="<%= polls[i]._id %>" value="<%= j %>"
+                                                required='required'>
+                                            <% } %>
+
+                                            <% if(polls[i].choices[j].votes==lead){ %>
+                                            <%= polls[i].choices[j].value %>
+                                            <i style="color: blue;" class="fas fa-angle-double-up"></i>
+                                            <% }else{ %>
+                                            <%= polls[i].choices[j].value %>
+                                            <% } %>
+
+                                            <div class="alignright" id="vote-count-<%= polls[i]._id %>-<%= j %>">
+                                                <%= polls[i].choices[j].votes %></div>
+                                        </label>
+                                    </div>
+                                </li>
+                                <% } %>
+                            </ul>
+                        </div>
+                        <div class="panel-footer">
+                        </div>
+                    </div>
+
+                </div>
+                <% } %>
+                <% if(check!=''){ %>
+                <input type="submit" id="vote-btn" class="btn btn-primary " value="VOTE NOW">
+                <% } %>
+            </form>
+        </div>
+
+
+
+        <!-- <script>
+            var vote = function (event) {
+                event.preventDefault();
+                var pollId = event.target.id;
+                var choice = event.target.optionsRadios.value;
+                axios.post('/' + pollId + '/vote', { choice: choice, socketId: socketId });
+                document.querySelector('#vote-btn-' + pollId).disabled = true;
+                var voteCount = document.querySelector('#vote-count-' + pollId + '-' + choice);
+                voteCount.textContent++;
+                voteCount.style.color = 'blue';
+                voteCount.style.fontWeight = '900';
+            };
+        </script> -->
+
+
+        <!-- <script>
+            var pusher = new Pusher('135e81c098defd715a72', { cluster: 'ap2' });
+            var socketId;
+
+            // retrieve the socket ID once we're connected
+            pusher.connection.bind('connected', function () {
+                socketId = pusher.connection.socket_id;
+            });
+
+            pusher.subscribe('poll-events')
+                .bind('vote', function (data) {
+                    var pollId = data.pollId;
+                    var choice = data.choice;
+                    var voteCount = document.querySelector('#vote-count-' + pollId + '-' + choice);
+                    voteCount.textContent++;
+                    // we'll flash the colour for a moment
+                    var color = voteCount.style.color;
+                    setTimeout(function () {
+                        voteCount.style.color = color;
+                    }, 2000);
+                    voteCount.style.color = 'green';
+                });
+        </script> -->
+    </div>
+</body>
+
+</html>

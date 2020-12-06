@@ -1,0 +1,210 @@
+<!-- <%- include('partials/header') %>
+<div class="jumbotron centered">
+  <div class="container">
+    <i class="fas fa-key fa-6x"></i>
+    <h1 class="display-3">Secrets</h1>
+    <p class="lead">Don't keep your secrets, share them anonymously!</p>
+    <hr>
+    <a class="btn btn-light btn-lg" href="/register" role="button">Register</a>
+    <a class="btn btn-dark btn-lg" href="/login" role="button">Login</a>
+  </div>
+</div>
+<%- include('partials/footer') %> -->
+<%- include('partials/homeheader') %>
+
+<nav class="navbar navbar-expand-lg sticky-top" id="top">
+  <div id="heading"> <img src="hostel/logo1.png" id="logo1">Hostel<img src="hostel/logo2.png"
+    id="logo2"></div>
+
+<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+  <div class="navbar-nav">
+
+    <!-- <button type="button" class="btn btn-outline-primary" style="margin-right: 3%;"><a class="nav-link"><span
+          id="t">LogIn</span></a></button> -->
+    <button type="button" class="btn btn-outline-primary" id="topbut" ><a class="nav-link" href="/home"><div id="t"><i class="fas fa-sign-in-alt" id="tt"></i>LogIn</div></a></button>
+        
+  </div>
+</div>
+<div id="unshow">
+  <button type="button" class="btn btn-outline-primary" id="topbut" ><a class="nav-link" href="/home"><div id="t"><i class="fas fa-sign-in-alt" id="tt"></i>LogIn</div></a></button>
+
+</div>
+  
+  
+      <!-- <button type="button" class="btn btn-outline-primary"><a class="nav-link" ><span id="t">SignUp</span></a></button> -->
+
+    </div>
+  </div>
+</nav>
+<div id="middler" style="padding-top: 1.4%;">
+  <div class="wrapper" id='frm' >
+
+    <form action="/register" method="POST" enctype="multipart/form-data">
+      <h2>Register</h2>
+      <h1 id="reg1">REGISTER</h1>
+      <p class="hint-text" id="hh">Let's make your hostel life more memorable :)</p>
+      <% const rang = message === 'Successfully registered, you will be shortly notified about your verification status through your mail'?'hara':'lal' %>
+      <% if(rang == 'lal'){ %>
+      <div class="text-center inputfield terms" style="color: red;">
+        <% if(message === ''){ %>
+        <p></p>
+        <% } else {%>
+        <p></p><%= message %>
+        <% } %>
+
+      </div>
+      <% }else{ %>
+      <div class="text-center inputfield terms" style="color: green;">
+        <p></p><%= message %>
+      </div>
+      <% } %>
+      <div class=" form">
+
+        <div class="inputfield">
+          <label style="color: #515b7c;"><strong>Full Name</strong></label>
+          <input type="text" class="input" name="name" required='required' placeholder="Full Name" value="<%= user==null?'':user.name %>">
+        </div>
+        <div class="inputfield">
+          <label style="color: #515b7c;"><strong>Hostel No.</strong></label>
+          <input type="text" class="input" name="hostel_no" required='required' placeholder="Hostel No."
+            value="<%= user==null?'':user.hostel_no %>">
+        </div>
+        <div class="inputfield">
+        
+          <label style="color: #515b7c;"><strong>Room No.</strong></label>
+          <input type="text" class="input" name="room_no" required='required' placeholder="Room No." value="<%= user==null?'':user.room_no %>">
+        </div>
+        <div class="inputfield">
+          <label style="color: #515b7c;"><strong>Roll No.</strong></label>
+          <input type="text" class="input" name="roll_no" required='required' placeholder="BRANCH/10XXX/YY" value="<%= user==null?'':user.roll_no %>">
+        </div>
+        <div class="inputfield">
+          <label style="color: #515b7c;"><strong>Email Address</strong></label>
+
+          <input type="email" class="input" name='username' required='required' placeholder="example@domain.com"
+            value="<%= user==null?'':user.username%>">
+        </div>
+        <div class="inputfield">
+          <label style="color: #515b7c;"><strong>Password</strong></label>
+          <input type="password" class="input" name="password" required='required' placeholder="Password">
+        </div>
+        <div class="inputfield">
+          <label style="color: #515b7c;"><strong>Confirm Password</strong></label>
+     
+          <input type="password" class="input" name="confirm_password" required='required' placeholder="Confirm Password"> 
+        </div>
+
+        <div class="inputfield">
+          <label style="color: #515b7c;"><strong>Contact Number</strong></label>
+    
+          <input type="tel" class="input" name='phone' required='required' placeholder="write 10 digits mobile number"
+            value="<%= user==null?'':user.phone %>">
+        </div>
+        <div class="inputfield">
+          <label style="color: #515b7c;"><strong>College ID Proof</strong></label>
+          
+          <input type="file" class="input" name='file' required='required' style="color: black;border-color:  #566787;">
+        </div>
+        <div class="inputfield">
+          <input type="submit" value="Register" class="btn" id="registerb">
+        </div>
+      </div>
+    </form>
+
+    <div class="text-center inputfield terms" style="color: #454646;">
+      <p></p><strong>Already have an account? </strong><a href="/home" style="color: #0C6C11;">Sign
+        in</a>
+    </div>
+    <!-- <div class="text-center" style="color: #454646;">Already have an account? <a href="/" style="color: #0C6C11;">Sign in</a></div> -->
+  </div>
+
+</div>
+<div id="backr">
+  <div class="contact">
+    <header class="header show-on-scroll">
+      <div class="" id="contop" style="border-style: groove; border-width: 5px; border-color: #131D47;">
+          <img src="./hostel/contact.png" id="ctop">©
+      </div>
+    </header>
+
+<div id="back">
+  <div class="contact">
+    <div id="conbot">Follow/Contact Us:</div>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm">
+          <img src="./hostel/dots.jpeg" class="images"><span id="name">Lakshya Gupta :</span>
+          <a href="https://www.linkedin.com/in/lakshya-gupta-415b691b0/" target="_blank">
+            <img src="hostel/linkedin1.jpg" class="images" id="ll" />
+          </a>
+          <a href="https://twitter.com/lakshyag123" target="_blank">
+            <img src="hostel/twitter.png" class="images" id="tl" />
+          </a>
+          <a href="https://github.com/lakshyag123" target="_blank">
+            <img src="hostel/github.webp" class="images" id="gl" />
+          </a>
+          <a href="https://www.facebook.com/lakshya1stgupta" target="_blank">
+            <img src="hostel/fb.png" class="images" id="fl" />
+          </a>
+          <a href="https://www.instagram.com/lakshyag123/?hl=en" target="_blank">
+            <img src="hostel/insta.jpg" class="images" id="il" />
+          </a>
+        </div>
+        <div class="col-sm">
+          <img src="hostel/whatsapp.webp" class="images">
+          <span id="num"><strong>: +91 800-31-32-907</strong></span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm">
+          <img src="./hostel/dots.jpeg" class="images"><span id="name">Prakhar Gupta :</span>
+          <a href="http://www.linkedin.com/in/prakharg200" target="_blank">
+            <img src="hostel/linkedin1.jpg" class="images" id="l1" />
+          </a>
+          <a href="https://twitter.com/Prakhargupta200" target="_blank">
+            <img src="hostel/twitter.png" class="images" id="l2" />
+          </a>
+          <a href="https://github.com/prakhargupta200" target="_blank">
+            <img src="hostel/github.webp" class="images" id="l3" />
+          </a>
+          <a href="https://www.facebook.com/prakhar.gupta.1000469" target="_blank">
+            <img src="hostel/fb.png" class="images" id="l4" />
+          </a>
+          <a href="https://www.instagram.com/prakhargupta200/" target="_blank">
+            <img src="hostel/insta.jpg" class="images" id="l5" />
+          </a>
+        </div>
+        <div class="col-sm">
+          <img src="hostel/whatsapp.webp" class="images">
+          <span id="num"><strong>: +91 992-99-93-723</strong></span>
+        </div>
+
+      </div>
+      <div class="row">
+        <div class="col-sm">
+          <img src="./hostel/dots.jpeg" class="images"><span id="name" style="margin-right: 2%;">Saketh Pabba :</span>
+          <a href="https://www.linkedin.com/in/saketh-pabba-783a94194" target="_blank">
+            <img src="hostel/linkedin1.jpg" class="images" id="l6" />
+          </a>
+          <a href="https://twitter.com/PabbaSaketh?s=09" target="_blank">
+            <img src="hostel/twitter.png" class="images" id="l7" />
+          </a>
+          <a href="https://github.com/sakpab2602" target="_blank">
+            <img src="hostel/github.webp" class="images" id="l8" />
+          </a>
+          <a href="https://m.facebook.com/saketh.pabba.5" target="_blank">
+            <img src="hostel/fb.png" class="images" id="l9" />
+          </a>
+          <a href="https://www.instagram.com/sak_pab_2602/" target="_blank">
+            <img src="hostel/insta.jpg" class="images" id="l10" />
+          </a>
+        </div>
+        <div class="col-sm">
+          <img src="hostel/whatsapp.webp" class="images">
+          <span id="num"><strong>: +91 814-02-65-638</strong></span>
+        </div>
+      </div>
+      <br>
+    </div>
+    <script type='text/javascript' src='./home.js'></script>
+    <%- include('partials/footer') %>
