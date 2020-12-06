@@ -170,6 +170,7 @@ body{
     flex-direction: column;
     align-items: flex-start;
     margin-bottom: 0px;
+    
   }
   .wrapper .form .inputfield label{
     margin-bottom: 1px;
@@ -224,7 +225,7 @@ body{
 
 .wrapper .form .inputfield .input,
 .wrapper .form .inputfield .textarea{
-  width: 350px;
+  width: 330px;
   outline: none;
   border: 1px solid #d5dbd9;
   font-size: 14px;
