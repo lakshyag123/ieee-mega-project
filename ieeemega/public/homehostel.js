@@ -29,19 +29,19 @@ $(".btn").hover(function(){
 // });
 
 
-$("#hide").click(function(){
-    $("#hidedrop2").hide();$("#hidedrop3").hide();$("#hidedrop4").hide();$("#hidedrop5").hide();
+// $("#hide").click(function(){
+//     $("#hidedrop2").hide();$("#hidedrop3").hide();$("#hidedrop4").hide();$("#hidedrop5").hide();
   
-});
-$("#hideme").hover(function(){
+// });
+// $("#hideme").hover(function(){
 
-  $("#hidedrop2").show();
-  $("#hidedrop3").show();
-  $("#hidedrop4").show();
-  $("#hidedrop5").show();
-});
-$("#hide").hover(function(){
-  $("#hidedrop2").hide();$("#hidedrop3").hide();$("#hidedrop4").hide();$("#hidedrop5").hide();
+//   $("#hidedrop2").show();
+//   $("#hidedrop3").show();
+//   $("#hidedrop4").show();
+//   $("#hidedrop5").show();
+// });
+// $("#hide").hover(function(){
+//   $("#hidedrop2").hide();$("#hidedrop3").hide();$("#hidedrop4").hide();$("#hidedrop5").hide();
 
-});
+// });
  
