@@ -130,6 +130,12 @@
     background-repeat: no-repeat;
     height: 110px;
 }
+#adhead2{
+    background: url(/hostel/feed.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 110px;
+}
 #attop{
     background: url(/hostel/hostelattop.png);
     background-size: cover;
