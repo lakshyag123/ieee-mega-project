@@ -4,7 +4,7 @@ One-step solution to all the hostel problems.
 Want to stay organised for your hostel life?, then this is the place for you.We have organised everything a hosteler ever needs, so that you can have access to them in one place.
 
 
-![Screenshot](/hostel/Screenshot.png?raw=true "Screenshot")
+![Screenshot](./public/hostel/Screenshot.png?raw=true "Screenshot")
 
 
 ## Features of the Website -
@@ -51,7 +51,7 @@ Back-end Side :-
 
 Front-end Side :-
 - [jQuery UI](https://jquery.com/)
-- [Bootstrap 4](https://getbootstrap.com/
+- [Bootstrap 4](https://getbootstrap.com/)
 - CSS3
 - [Javascript](https://www.javascript.com/)
 
