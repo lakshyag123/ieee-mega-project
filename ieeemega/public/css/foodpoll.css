@@ -54,3 +54,40 @@ body {
     font-size: 30px;
     margin-bottom: 50px;
 }
+
+@media screen and (max-width: 1500px){
+    .block{
+        width: 400px;
+        height: 500px;
+        margin-left: 40%;
+        margin-right: 90%;
+    }
+    h4{
+        height: 30px;
+    }
+    .topic{
+        font-size: 1.5em;
+    }
+    .type{
+        font-size: 1.3em;
+    }
+    .panel{
+        width: 400px; 
+        height: 400px;
+        font-size: 1.6em;
+    }
+    .panel-body{
+        height: 300px;
+    }
+    .panel-heading{
+        height: 50px;
+    }
+    .list-group-item{
+        height: 100px;
+    }
+    #vote-btn{
+        margin-left: 40%;
+        font-size: 50px;
+        margin-bottom: 50px;
+    }
+}

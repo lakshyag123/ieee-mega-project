@@ -38,13 +38,13 @@
         <div class="row">
             <form action="/poll" method="POST">
                 <% for(let i=0;i<polls.length; i++){ %>
-                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="col-lg-3 col-md-4 block">
 
                     <div class="panel panel-primary">
-                        <h4 style="text-align: center;"><%= polls[i].topic %></h4>
+                        <h4 style="text-align: center;"><span class="topic"><%= polls[i].topic %></span></h4>
                         <div class="panel-heading" style="background-color: #313c59;">
                             <h3 class="panel-title">
-                                <span class="glyphicon glyphicon-arrow-right"></span><%= polls[i].type %>
+                                <span class="glyphicon glyphicon-arrow-right"></span><span class="type"><%= polls[i].type %></span>
                             </h3>
                         </div>
                         <div class="panel-body">
