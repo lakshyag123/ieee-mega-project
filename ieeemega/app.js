@@ -10,9 +10,9 @@ const session = require('express-session');
 const passport = require("passport");
 const passportLocalMongoose = require("passport-local-mongoose");
 const mailgun = require('mailgun-js');
-const API_KEY = process.env.API_KEY;
+const API_KEY = process.env.API_KEY; //i will give the api key
 const dateTime = require('node-datetime');
-const DOMAIN = process.env.DOMAIN;  //i will give the api key
+const DOMAIN = process.env.DOMAIN;
 const multer = require('multer');
 // const e = require('express');
 var moment = require('moment');
@@ -36,7 +36,7 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(methodOverride("_method"));
-mongoose.connect(process.env.MONGO_URL, { useNewUrlParser: true, useFindAndModify: false });  // i will give the mongodb server url
+mongoose.connect(process.env.MONGO_URL, { useNewUrlParser: true, useFindAndModify: false, useUnifiedTopology: true  });  // i will give the mongodb server url
 mongoose.set("useCreateIndex", true);
 
 var storage = multer.diskStorage({
@@ -251,7 +251,7 @@ const items = [
   },
   {
     "id": 3,
-    "name": "Jacket/Woolen",
+    "name": "Jacket",
     "price": 3000,
     "imgName": "jacket.jpg"
   }

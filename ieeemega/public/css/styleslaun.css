@@ -440,4 +440,23 @@ html, body {
         padding-bottom: 0px;
         height: 40px;
     }
+    .btn-edit{
+        font-size: 1.75em;
+    }
+    .cart-quantity-input {
+        height: 50px;
+        width: 60px;
+    }
+    .cart-item{
+        font-size: .8em;
+    }
+    .cart-header{
+        font-size: 1em;
+    }
+    * {
+        box-sizing: border-box;
+        font-family: Raleway;
+        color: #777;
+        font-size: 1.15em;
+    }
 }
