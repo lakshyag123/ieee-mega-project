@@ -55,7 +55,7 @@ body {
     margin-bottom: 50px;
 }
 
-@media screen and (max-width: 1500px){
+@media screen and (max-width: 1000px){
     .block{
         width: 400px;
         height: 500px;
