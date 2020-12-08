@@ -475,7 +475,7 @@ p{
     font-size: 19px;
     background: #f5f5f5;
 }
-@media screen and (min-width: 405px){
+@media screen and (min-width: 420px){
     #forme{
         display: none;
     }
@@ -483,11 +483,14 @@ p{
         display: none;
     }
 }
-@media screen and (max-width: 405px){
+#bab{
+    font-size: 72px;
+}
+@media screen and (max-width: 420px){
     #xox{
         margin-top: 70px;
     }
-    #ba{
+    #bab{
         font-size: 50px;
     }
     #forgottop{
