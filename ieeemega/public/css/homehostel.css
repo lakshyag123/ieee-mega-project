@@ -122,21 +122,33 @@ body{
     }
 }
 @media screen and (max-width: 600px){
-    .flex-container{
+    /* .flex-container{
         margin-left: 18%;
-    }
+    } */
     #bo{
         margin-left: 14%;
     }
 }
-
-@media screen and (max-width: 1460px){
+@media screen and (min-width: 1000px){
     /* .flex-container{
         margin-left: 20%;
     } */
     .flex-container{
-        margin-left: 11.3%;
+        margin-left: 11.2%;
     }
+}
+@media screen and (max-width: 1000px){
+    .flex-container{
+        margin-left: 8%;
+    }
+}
+@media screen and (max-width: 1460px){
+    /* .flex-container{
+        margin-left: 20%;
+    } */
+    /* .flex-container{
+        margin-left: 11.3%;
+    } */
     /* #logo3{
         width: 100px;
         height: 70px;
